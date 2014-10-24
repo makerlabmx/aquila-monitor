@@ -1,0 +1,43 @@
+This is a node.js console configured with the aquila-client library.
+You can use any of the library's command for monitoring and interfacing with the Aquila network.
+
+Example uses:
+
+        Get all devices:
+                things = aq.devices();
+        Filter by name:
+                things = aq.devices("#Device Name");
+        Filter by class:
+                things = aq.devices(".mx.makerlab.deviceClass");
+        Filter by address:
+                things = aq.devices([252,194,61,0,0,5,178,228]);
+        Filter by id:
+                things = aq.devices("544987f20e027eb259a88a6f");
+
+        Execute action by number:
+                things.action(0);
+        Execute action by name, with param 255:
+                things.action("Turn On", 255);
+
+        Subscribe function to an event:
+                things.on("Button Pressed", function(param) {
+                        console.log("Got event 'Button Pressed' with param ", param);
+                    });
+
+        Discover nearby devices:
+                aq.discover();
+
+        Reload all devices:
+                aq.reload();
+
+        Get PAN
+                aq.getPAN(function(err, pan){
+                        console.log(pan);
+                    });
+
+        Set PAN
+                var newPAN = 0xCA5A;
+                aq.setPAN(newPAN, function(err, pan) {
+                        if(err) console.log("Error setting PAN");
+                        console.log("PAN set OK and is now: ", pan);
+                    });
