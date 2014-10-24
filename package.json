@@ -1,6 +1,6 @@
 {
   "name": "aquila-monitor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Command line monitor for the Aquila API",
   "main": "aquila-monitor.js",
   "scripts": {
@@ -15,5 +15,9 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/makerlabmx/aquila-monitor.git"
+  },
+  "preferGlobal": "true",
+  "bin": {
+    "aquila-monitor" : "aquila-monitor.js"
   }
 }
